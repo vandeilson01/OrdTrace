@@ -1,0 +1,31 @@
+
+# HTID:13089121: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:13089121:
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+	RewriteRule ^home/?$ /home.php [NC,L]
+    RewriteRule ^/?$ /home.php [NC,L]
+    RewriteRule ^aplicacoes/?$ /aplicacoes.php [NC,L]
+    RewriteRule ^blog/?$ /blog.php [NC,L]
+    RewriteRule ^solucoes/?$ /solucoes.php [NC,L]
+    RewriteRule ^sobre/?$ /sobre.php [NC,L]
+    
+    RewriteRule ^login/?$ /login.php [NC,L]
+    RewriteRule ^longado/?$ /adm/start1.php [NC,L]
+    RewriteRule ^cadasto/?$ /cadasto.php [NC,L]
+    
+    RewriteRule ^proposta/?$ /proposta.php [NC,L]
+    
+    # RewriteRule ^longado/?$ /adm/start1.php [NC,L]
+
+    RewriteRule ^result_blog/?$ /result_blog.php [NC,L]
+    RewriteRule ^result_obter/?$ /result_obter.php [NC,L]
+    RewriteRule ^result_pesquisa/?$ /result_pesquisa.php [NC,L]
+    
+    #
+
+    RewriteRule ^adm/?$ /adm/index.php [NC,L]
+</IfModule>
+
