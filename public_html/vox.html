@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+  <!--<script type="text/javascript" src="js/teste.js"></script>-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>teste</title>
+</head>
+<body>
+    <p id="ola">Olá tableless, você falou:</p>
+
+<div id="transcription"></div>
+
+<button id="rect">Gravar</button>
+
+<span id="unsupported" class="hidden">API not supported</span>
+
+
+<label class="mostra"></label>
+
+<button id="rect">button</button>
+
+    <script>
+
+//       window.SpeechRecognition = window.SpeechRecognition ||
+// window.webkitSpeechRecognition ||
+// null;
+
+// //caso não suporte esta API DE VOZ            
+// if (window.SpeechRecognition === null) {
+//     //document.getElementById('unsupported').classList.remove('hidden');
+// }else {
+//   var recognizer = new window.SpeechRecognition();
+//   var transcription = document.getElementById("transcription");
+
+//             //Para o reconhecedor de voz, não parar de ouvir, mesmo que tenha pausas no usuario
+//             recognizer.continuous = true;
+//             recognizer.onresult = function(event){
+//                 transcription.textContent = "";
+//                 for (var i = event.resultIndex; i < event.results.length; i++) {
+//                     if(event.results[i].isFinal){
+//                         transcription.textContent = event.results[i][0].transcript+' (Taxa de acerto [0/1] : ' + event.results[i][0].confidence + ')';
+//                     }else{
+//                         transcription.textContent += event.results[i][0].transcript;
+//                     }
+//                 }
+//             }
+//             document.querySelector("#rect").addEventListener("click",function(){
+//                 try {
+//                     recognizer.start();
+//                   } catch(ex) {
+//                     alert("error: "+ex.message);
+//                   }
+//             });
+//     //......
+// }
+    </script>
+    <script>
+    
+function falar(texto){
+      
+  var text  = new SpeechSynthesisUtterance();
+      text.lang = "pt-BR";
+      text.text = texto;
+    
+      voices = window.speechSynthesis.getVoices();
+      text['voiceURI'] = 'Google português do Brasil'; //discovered after dumping getVoices()
+      text.lang = "pt-BR";
+      text['localService'] = true;
+      
+  speechSynthesis.speak(text);
+}
+
+
+//inner
+
+function inner(texto){
+  a.innerHTML = texto;
+}
+
+var a = document.querySelector(".mostra");
+
+//tempo
+
+var ano = new Date().getFullYear();
+var dia = new Date().getDate();
+
+var day = new Date().getMinutes();
+
+var hora = new Date().getHours();
+var minutos = new Date().getMinutes();
+
+
+;
+
+   var r = falar('preparando o diaguinóstico do sistema');
+
+   if(1 == 1){
+     setTimeout(() => {
+       falar('hoje é dia ' + dia + ' senhor');
+       inner('hoje é dia ' + dia + ' senhor');
+     }, 5000);
+
+     setTimeout(() => {
+        falar(hora + 'horas e' + minutos + 'minutos');
+        inner(hora + 'horas e' + minutos + 'minutos');
+     }, 9000);
+   }else{
+
+   }
+
+  // falar('preparando o diaguinóstico do sistema');
+
+
+  var des = document.querySelector('.mostra');
+
+</script>
+</body>
+</html>
